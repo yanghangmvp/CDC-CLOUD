@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_ZT_PRINT_CONFIG'
+define service ZUI_ZT_PRINT_CONFIG_O4 {
+  expose ZC_ZT_PRINT_CONFIG as Config;
+}
