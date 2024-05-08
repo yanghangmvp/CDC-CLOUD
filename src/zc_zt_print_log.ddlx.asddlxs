@@ -1,0 +1,143 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Log', 
+    typeNamePlural: 'Logs'
+  }
+}
+annotate view ZC_ZT_PRINT_LOG with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Log', 
+    position: 10 
+  } ]
+  @UI.hidden: true
+  UUID;
+  
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  TemplateUUID;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  IsExternalProvidedData;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  ExternalProvidedData;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'ProvidedKeys'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'ProvidedKeys'
+  } ]
+  ProvidedKeys;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  Pdf;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #MEDIUM, 
+    label: 'MimeType'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'MimeType'
+  } ]
+  MimeType;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #MEDIUM, 
+    label: 'FileName'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'FileName'
+  } ]
+  FileName;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  SendToPrintQueue;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #MEDIUM, 
+    label: 'NumberOfCopies'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'NumberOfCopies'
+  } ]
+  NumberOfCopies;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #MEDIUM, 
+    label: 'PrintQueue'
+  } ]
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'PrintQueue'
+  } ]
+  PrintQueue;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #MEDIUM, 
+    label: 'MimeTypeData'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'MimeTypeData'
+  } ]
+  MimeTypeData;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #MEDIUM, 
+    label: 'DataFileName'
+  } ]
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'DataFileName'
+  } ]
+  DataFileName;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

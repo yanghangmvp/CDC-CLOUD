@@ -1,0 +1,60 @@
+managed implementation in class ZBP_R_ZT_PRINT_LOG unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_ZT_PRINT_LOG alias Log
+persistent table zzt_print_log
+draft table zzt_print_log_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with additional save   // add this line
+
+{
+  field ( readonly )
+  UUID,               // add add this line
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt,
+  FileName,  // add add this line
+  MimeType,  // add this line
+  Pdf;       // add this line
+
+  field ( numbering : managed )
+  UUID;
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  determination createPrintFile on save { create; }
+  static factory action CreatePrintRecord parameter ZR_ZT_PRINT_PARAMETER [1];
+
+  mapping for zzt_print_log
+    {
+      UUID                   = uuid;
+      TemplateUUID           = template_uuid;
+      IsExternalProvidedData = is_external_provided_data;
+      ExternalProvidedData   = external_provided_data;
+      ProvidedKeys           = provided_keys;
+      Pdf                    = pdf;
+      MimeType               = mime_type;
+      FileName               = file_name;
+      SendToPrintQueue       = send_to_print_queue;
+      NumberOfCopies         = number_of_copies;
+      PrintQueue             = print_queue;
+      MimeTypeData           = mime_type_data;
+      DataFileName           = data_file_name;
+      CreatedBy              = created_by;
+      CreatedAt              = created_at;
+      LastChangedBy          = last_changed_by;
+      LastChangedAt          = last_changed_at;
+      LocalLastChangedAt     = local_last_changed_at;
+    }
+}
