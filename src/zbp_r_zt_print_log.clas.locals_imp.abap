@@ -137,7 +137,7 @@ CLASS lhc_log IMPLEMENTATION.
 
 *&---通过打印参数获取对应模板服务数据
       SELECT SINGLE *
-        FROM zr_zt_prt_template
+        FROM zr_zt_print_config
        WHERE uuid = @<file>-templateuuid      "#EC CI_ALL_FIELDS_NEEDED
         INTO @DATA(ls_template).
       IF sy-subrc = 0.

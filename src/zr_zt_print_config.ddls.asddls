@@ -11,8 +11,8 @@ define root view entity ZR_ZT_PRINT_CONFIG
       // 设置为文件模板，存放Adobe liveCycle 导出的打印文件
       @Semantics.largeObject:
       { mimeType: 'MimeType',
-      fileName: 'FileName',
-      contentDispositionPreference: #ATTACHMENT }
+        fileName: 'FileName',
+        contentDispositionPreference: #ATTACHMENT }
       template                  as Template,
       @Semantics.mimeType: true
       mime_type                 as MimeType,
@@ -21,8 +21,8 @@ define root view entity ZR_ZT_PRINT_CONFIG
       // 设置为附加文件，用于记录创建时产生对应的数据源链接文件，为后续Adobe 开发提供文件
       @Semantics.largeObject:
       { mimeType: 'XsdType',
-      fileName: 'XsdFileName',
-      contentDispositionPreference: #ATTACHMENT }
+        fileName: 'XsdFileName',
+        contentDispositionPreference: #ATTACHMENT }
       xsd_file                  as XsdFile,
       @Semantics.mimeType: true
       xsd_type                  as XsdType,
