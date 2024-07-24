@@ -1,5 +1,6 @@
 managed implementation in class ZBP_R_ZT_PRINT_LOG unique;
-strict ( 2 );
+//strict ( 2 );
+strict;
 with draft;
 define behavior for ZR_ZT_PRINT_LOG alias Log
 persistent table zzt_print_log
@@ -41,6 +42,7 @@ with additional save   // add this line
     {
       UUID                   = uuid;
       TemplateUUID           = template_uuid;
+      TemplateName           = templatename;
       IsExternalProvidedData = is_external_provided_data;
       ExternalProvidedData   = external_provided_data;
       ProvidedKeys           = provided_keys;

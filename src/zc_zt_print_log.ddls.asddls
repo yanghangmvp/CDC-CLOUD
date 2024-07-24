@@ -7,6 +7,7 @@ define root view entity ZC_ZT_PRINT_LOG
 {
   key UUID,
       TemplateUUID,
+      TemplateName,
       IsExternalProvidedData,
       ExternalProvidedData,
       ProvidedKeys,

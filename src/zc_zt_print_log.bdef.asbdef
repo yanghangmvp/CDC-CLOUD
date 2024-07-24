@@ -1,5 +1,6 @@
 projection;
-strict ( 2 );
+//strict ( 2 );
+strict;
 use draft;
 define behavior for ZC_ZT_PRINT_LOG alias Log
 use etag

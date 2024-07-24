@@ -28,7 +28,7 @@ CLASS lhc_zr_zt_print_config IMPLEMENTATION.
           "FDP utils
           " 通过数据服务获取对应的xsd 文件
           " 获取数据服务类
-          DATA(lo_fdp_util) = cl_fp_fdp_services=>get_instance( CONV zzeservicename( <result>-servicedefinitionname ) ).
+          DATA(lo_fdp_util) = cl_fp_fdp_services=>get_instance( CONV ZZESERVICE( <result>-servicedefinitionname ) ).
           " 获取数据服务xsd 文件
           <result>-xsdfile = lo_fdp_util->get_xsd(  ).
           " 设置xsd 文件名
